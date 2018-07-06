@@ -1,8 +1,15 @@
-echo "1. Palindrome with count"
+
+asd=1
+while [ $asd -eq 1 ]
+do
+echo "1.Palindrome with count"
 echo "2.Sum of digits of the number"
-echo "3. Check if prime"
+echo "3.Check if prime"
+
 echo "Enter your choice"
+
 read choice
+
 case $choice in
 	1)echo " Enter a string"
 	read str
@@ -21,12 +28,13 @@ case $choice in
 	if test $k != $l
 	then
 	echo "String is not a palindrome"
-	exit 
+	break
 	fi
 	i=`expr $i + 1`
 	len=`expr $len - 1 `
 	done
 	echo " String is a palindrome"
+
 	
 	;;
 
@@ -70,10 +78,17 @@ case $choice in
 	fi
 
 	;;
+	
+	
 
+
+	
 	*) echo "Enter a valid choice"
 	
 	;;
 
 esac
+echo " Do you want to continue? y=1 n=0"
+read asd
+done
 
