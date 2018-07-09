@@ -20,7 +20,7 @@ fi
 
 case $ch in
 	1)	
-		echo " Roll No.	  	Name	 	 M1	  	  M2	   M3 " > student	
+		echo "RNo   Name      M1   M2   M3  " > student	
 		
 		;;
 		
@@ -46,7 +46,7 @@ case $ch in
 			read m3
 		
 		
-		echo "$roll		  $name	  		 $m1	 	  $m2       $m3" >> student
+		echo "$roll   $name   $m1   $m2   $m3" >> student
 		sort -o student -k 1 student 
 		echo "Record inserted."
 		
@@ -77,7 +77,7 @@ case $ch in
 		if grep -i "$roll" student
 		then 
 			echo "Record found and deleted."
-			if grep -v "$roll" student > temp
+			if grep -v -i "$roll" student > temp
 			then 
 			rm student						#remove
 			mv temp student					#rename
@@ -94,7 +94,7 @@ case $ch in
 		if grep -i "$roll" student
 		then
 			echo "Record found , modifying...."
-			if grep -v "$roll" student > temp
+			if grep -v -i "$roll" student > temp
 			then
 				rm student
 				mv temp student
@@ -106,7 +106,7 @@ case $ch in
 				read m2
 				echo "Enter marks in subject 3"
 				read m3
-				echo "$roll		  $name	  		 $m1	 	  $m2       $m3" >> student
+				echo "$roll   $name   $m1   $m2   $m3" >> student
 				sort -o student -k 1 student
 				cat student
 			fi
